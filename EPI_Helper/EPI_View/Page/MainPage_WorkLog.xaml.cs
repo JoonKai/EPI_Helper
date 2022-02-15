@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace EPI_Helper.EPI_View.Page
 {
     /// <summary>
-    /// MainPage_Groupware_Tab1.xaml에 대한 상호 작용 논리
+    /// MainPage_WorkLog.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class MainPage_Groupware_Tab1 : UserControl
+    public partial class MainPage_WorkLog : UserControl
     {
-        public MainPage_Groupware_Tab1()
+        public MainPage_WorkLog()
         {
             InitializeComponent();
         }

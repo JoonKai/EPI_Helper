@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EPI_Helper.EPI_View.Page
+namespace Hellsys.Hell_UnitControls
 {
     /// <summary>
-    /// MainPage_Groupware_Tab1.xaml에 대한 상호 작용 논리
+    /// HellsysLineGrid.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class MainPage_Groupware_Tab1 : UserControl
+    public partial class HellsysLineGrid : UserControl
     {
-        public MainPage_Groupware_Tab1()
+        public HellsysLineGrid()
         {
             InitializeComponent();
         }

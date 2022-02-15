@@ -49,6 +49,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hell_Controls\LineGrid\CustomGrid.cs" />
     <Compile Include="Hell_Controls\Process\Hell_ProcessLevel.xaml.cs">
       <DependentUpon>Hell_ProcessLevel.xaml</DependentUpon>
     </Compile>
@@ -57,6 +58,9 @@
     </Compile>
     <Compile Include="Hell_Controls\Tank\Hell_Tank2.xaml.cs">
       <DependentUpon>Hell_Tank2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hell_UnitControls\HellsysLineGrid.xaml.cs">
+      <DependentUpon>HellsysLineGrid.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -91,6 +95,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Hell_Controls\Tank\Hell_Tank2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Hell_UnitControls\HellsysLineGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
