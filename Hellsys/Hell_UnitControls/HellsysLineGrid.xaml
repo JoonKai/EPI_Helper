@@ -6,25 +6,47 @@
              xmlns:line="clr-namespace:Hellsys.Hell_Controls.LineGrid"
              xmlns:local="clr-namespace:Hellsys.Hell_UnitControls"
              mc:Ignorable="d" RenderOptions.EdgeMode="Aliased">
+    <UserControl.Resources>
+        <Style x:Key="tbGridStyle1" TargetType="{x:Type TextBox}">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="0.5"/>
+            <Setter Property="IsInactiveSelectionHighlightEnabled" Value="False"/>
+        </Style>
+        <Style x:Key="tbGridStyle2" TargetType="{x:Type TextBox}">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="0.5"/>
+            <Setter Property="IsInactiveSelectionHighlightEnabled" Value="False"/>
+        </Style>
+    </UserControl.Resources>
     <ScrollViewer>
         <StackPanel Orientation="Vertical">
             <ListView>
 
             </ListView>
-            <line:CustomGrid Height="300" Margin="1" ShowCustomGridLines="True" GridLineBrush="Black" GridLineThickness="1">
+            <line:CustomGrid Margin="1" ShowCustomGridLines="True" GridLineBrush="Black" GridLineThickness="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="200"/>
-                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Border Background="White" Grid.Row="0" Margin="1">
                     <Grid Margin="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="70" MaxWidth="70"/>
-                            <ColumnDefinition Width="210" MaxWidth="210"/>
-                            <ColumnDefinition Width="80" MaxWidth="80"/>
-                            <ColumnDefinition Width="80" MaxWidth="80"/>
-                            <ColumnDefinition Width="80" MaxWidth="80"/>
-                            <ColumnDefinition Width="80" MaxWidth="80"/>
+                            <ColumnDefinition Width="170" MaxWidth="170"/>
+                            <ColumnDefinition Width="70" MaxWidth="70"/>
+                            <ColumnDefinition Width="70" MaxWidth="70"/>
+                            <ColumnDefinition Width="70" MaxWidth="70"/>
+                            <ColumnDefinition Width="70" MaxWidth="70"/>
                             <ColumnDefinition Width="30" MaxWidth="30"/>
                             <ColumnDefinition Width="30" MaxWidth="30"/>
                             <ColumnDefinition Width="50" MaxWidth="50"/>
@@ -40,10 +62,10 @@
                             <ColumnDefinition Width="40" MaxWidth="40"/>
                             <ColumnDefinition Width="40" MaxWidth="40"/>
                             <ColumnDefinition Width="40" MaxWidth="40"/>
-                            <ColumnDefinition Width="40" MaxWidth="40"/>
-                            <ColumnDefinition Width="50" MaxWidth="50"/>
-                            <ColumnDefinition Width="50" MaxWidth="50"/>
-                            <ColumnDefinition Width="50" MaxWidth="50"/>
+                            <ColumnDefinition Width="60" MaxWidth="60"/>
+                            <ColumnDefinition Width="60" MaxWidth="60"/>
+                            <ColumnDefinition Width="60" MaxWidth="60"/>
+                            <ColumnDefinition Width="60" MaxWidth="60"/>
                             <ColumnDefinition Width="80" MaxWidth="80"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
@@ -59,396 +81,173 @@
                             <RowDefinition Height="18"/>
                         </Grid.RowDefinitions>
                         <!--첫번째줄-->
-                        <Border Background="Yellow" Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="1">
-                            <TextBlock Text="PL19" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="담당자" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="23" BorderBrush="LightSeaGreen" BorderThickness="1">
-                            <TextBlock Text="업부일지" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
+                        <TextBox Text="PL19" Background="Yellow" Grid.Column="0" Grid.Row="0" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="담당자" Foreground="White" BorderBrush="White" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Style="{StaticResource tbGridStyle1}" Background="#FF093687"/>
+                        <TextBox Text="업부일지" Background="#16365C" Foreground="White" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="23" Style="{StaticResource tbGridStyle1}"/>
                         <!--두번째줄-->
-                        <Border Background="#FFFFCC" Grid.Column="0" Grid.Row="1" Margin="0 -0.5 0 -0.5" BorderBrush="Black" BorderThickness="1">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#C4D79B" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="양산 Recipe" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#C4D79B" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="4" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="작업 Point" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#92CDDC" Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="Carrier ID" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#92CDDC" Grid.Column="10" Grid.Row="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#92CDDC" Grid.Column="12" Grid.Row="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="DarkOrange" Grid.Column="14" Grid.Row="1" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="관리 Carrier" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#CCC0DA" Grid.Column="16" Grid.Row="1" Grid.ColumnSpan="6" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="대기 Carrier" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="Gray" Grid.Column="22" Grid.Row="1" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="Temp Range" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="Gray" Grid.Column="25" Grid.Row="1" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="TUNE 요청" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
+                        <TextBox Background="#FFFFCC" Grid.Column="0" Grid.Row="1" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="양산 Recipe" Background="#C4D79B" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="작업 Point" Background="#C4D79B" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="4" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="Carrier ID" Background="#92CDDC" Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Background="#92CDDC" Grid.Column="10" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Background="#92CDDC" Grid.Column="12" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="관리 Carrier" Background="DarkOrange" Grid.Column="14" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="대기 Carrier" Background="#CCC0DA" Grid.Column="16" Grid.Row="1" Grid.ColumnSpan="6" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="Temp Range" Background="Gray" Grid.Column="22" Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="TUNE 요청" Background="Gray" Grid.Column="25" Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource tbGridStyle1}"/>
                         <!--세번째줄-->
-                        <Border Background="#FFFFCC" Grid.Column="0" Grid.Row="2" Margin="0 -0.5 0 -0.5" BorderBrush="Black" BorderThickness="1">
-                            <TextBlock Text="양산" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#FFFFCC" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="0 -0.5 0 -0.5" BorderBrush="Black" BorderThickness="1">
-                            <TextBlock Text="M-4I_M_B12k" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="4" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="1~14" Foreground="Red" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBox Text="20A047" HorizontalContentAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#92CDDC" Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="Carrier ID" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="10" Grid.Row="2" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="20A047" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="12" Grid.Row="2" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="20A047" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="14" Grid.Row="2" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="16" Grid.Row="2" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="18" Grid.Row="2" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="20" Grid.Row="2" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="22" Grid.Row="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="738" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="23" Grid.Row="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="738" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="24" Grid.Row="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="738" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="25" Grid.Row="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="738" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
+                        <TextBox Text="양산" Background="#FFFFCC" Grid.Column="0" Grid.Row="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="M-4I_M_B12k" Background="#FFFFCC" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="1~14" Foreground="Red" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="4" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="20A047" Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="3" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="20A047" Grid.Column="10" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="20A047" Grid.Column="12" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="14" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="16" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="18" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="20" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="738" Grid.Column="22" Grid.Row="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="738" Grid.Column="23" Grid.Row="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="738" Grid.Column="24" Grid.Row="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="738" Grid.Column="25" Grid.Row="2" Style="{StaticResource tbGridStyle1}"/>
                         <!--네번째줄-->
-                        <Border Background="#FFFFCC" Grid.Column="0" Grid.Row="3" Margin="0 -0.5 0 -0.5" BorderBrush="Black" BorderThickness="1">
-                            <TextBlock Text="LATERAL" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#FFFFCC" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="m-4I_M_B12K" Foreground="Red" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="4" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="1~14" Foreground="Red" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="7" Grid.Row="3" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="20A047" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="10" Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="20A047" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="12" Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="20A047" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="14" Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="16" Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="18" Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="20" Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="22" Grid.Row="3" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="738" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="23" Grid.Row="3" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="738" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="24" Grid.Row="3" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="738" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="25" Grid.Row="3" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="738" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
+                        <TextBox Text="LATERAL" Background="#FFFFCC" Grid.Column="0" Grid.Row="3" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="m-4I_M_B12K" Foreground="Red" Background="#FFFFCC" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="1~14" Foreground="Red" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="4" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="20A047" Grid.Column="7" Grid.Row="3" Grid.ColumnSpan="3" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="20A047" Grid.Column="10" Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="20A047"  Grid.Column="12" Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="14" Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="16" Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="18" Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="20" Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="738" Grid.Column="22" Grid.Row="3" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="738" Grid.Column="23" Grid.Row="3" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="738" Grid.Column="24" Grid.Row="3" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="738" Grid.Column="25" Grid.Row="3" Style="{StaticResource tbGridStyle1}"/>
                         <!--다섯번째줄-->
-                        <Border Background="#FFFFCC" Grid.Column="0" Grid.Row="4" Margin="0 -0.5 0 -0.5" BorderBrush="Black" BorderThickness="1">
-                            <TextBlock Text="VLED" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#FFFFCC" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="m-4I_M_B12K" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="4" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="1~14" Foreground="Red" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="7" Grid.Row="4" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="20A047" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="10" Grid.Row="4" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="20A047" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="12" Grid.Row="4" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="20A047" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="14" Grid.Row="4" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="16" Grid.Row="4" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="18" Grid.Row="4" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="20" Grid.Row="4" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="22" Grid.Row="4" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="738" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="23" Grid.Row="4" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="738" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="24" Grid.Row="4" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="738" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="25" Grid.Row="4" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="738" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
+                        <TextBox Text="VLED" Background="#FFFFCC" Grid.Column="0" Grid.Row="4" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="m-4I_M_B12K" Background="#FFFFCC" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="1~14" Foreground="Red" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="4" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="20A047" Grid.Column="7" Grid.Row="4" Grid.ColumnSpan="3" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="20A047" Grid.Column="10" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="20A047" Grid.Column="12" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="14" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="16" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="18" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="20" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="738" Grid.Column="22" Grid.Row="4" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="738" Grid.Column="23" Grid.Row="4" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="738" Grid.Column="24" Grid.Row="4" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="738" Grid.Column="25" Grid.Row="4" Style="{StaticResource tbGridStyle1}"/>
                         <!--여섯번째줄-->
-                        <Border Background="#FFFFCC" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Margin="0 -0.5 0 -0.5" BorderBrush="Black" BorderThickness="1">
-                            <TextBlock Text="PSS" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#FFFFCC" Grid.Column="1" Grid.Row="5" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="SPT(4)" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="2" Grid.Row="5"  BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="4" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="7" Grid.Row="5" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="10" Grid.Row="5" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="20A047" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="12" Grid.Row="5" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="14" Grid.Row="5" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="16" Grid.Row="5" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="18" Grid.Row="5" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="20" Grid.Row="5" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="22" Grid.Row="5" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="FILTER" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="23" Grid.Row="5" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="240" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="25" Grid.Row="5" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
+                        <TextBox Text="PSS" Background="#FFFFCC" Grid.Column="0" Grid.Row="5" Grid.RowSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="SPT(4)" Background="#FFFFCC" Grid.Column="1" Grid.Row="5" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="2" Grid.Row="5" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="4" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="7" Grid.Row="5" Grid.ColumnSpan="3" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="20A047" Grid.Column="10" Grid.Row="5" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="12" Grid.Row="5" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="14" Grid.Row="5" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="16" Grid.Row="5" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="18" Grid.Row="5" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="20" Grid.Row="5" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="FILTER" Grid.Column="22" Grid.Row="5" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="240" Grid.Column="23" Grid.Row="5" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="25" Grid.Row="5" Style="{StaticResource tbGridStyle1}"/>
                         <!--일곱번째줄-->
-                        <Border Grid.Column="0" Grid.Row="6" Margin="0 -0.5 0 -0.5" BorderBrush="Black" BorderThickness="1">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="1" Grid.Row="6" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="JR 12CS" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="2" Grid.Row="6"  BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="4" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Foreground="Red" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="7" Grid.Row="6" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="10" Grid.Row="6" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="20A047" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="12" Grid.Row="6" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="14" Grid.Row="6" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="16" Grid.Row="6" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="18" Grid.Row="6" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="20" Grid.Row="6" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="22" Grid.Row="6" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="PM" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="23" Grid.Row="6" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="240" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="25" Grid.Row="6" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
+                        <TextBox Text="JR 12CS" Grid.Column="1" Grid.Row="6" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="2" Grid.Row="6" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Foreground="Red" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="4" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="7" Grid.Row="6" Grid.ColumnSpan="3" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="20A047" Grid.Column="10" Grid.Row="6" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox  Grid.Column="12" Grid.Row="6" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="14" Grid.Row="6" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="16" Grid.Row="6" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="18" Grid.Row="6" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="20" Grid.Row="6" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="PM" Grid.Column="22" Grid.Row="6" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="240" Grid.Column="23" Grid.Row="6" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="25" Grid.Row="6" Style="{StaticResource tbGridStyle1}"/>
                         <!--여덟번째줄-->
-                        <Border Background="#99CCFF" Grid.Column="0" Grid.Row="7" Margin="0 -0.5 0 -0.5" BorderBrush="Black" BorderThickness="1">
-                            <TextBlock Text="TIME" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#99CCFF" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="5:19" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="4"  BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Foreground="Red" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="7" Grid.Row="7" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="10" Grid.Row="7" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="20A047" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="12" Grid.Row="7" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="14" Grid.Row="7" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="16" Grid.Row="7" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="18" Grid.Row="7" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="20" Grid.Row="7" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="22" Grid.Row="7" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="FILTER" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="23" Grid.Row="7" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock Text="240" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Grid.Column="25" Grid.Row="7" BorderBrush="Black" BorderThickness="0.5">
-                            <TextBlock HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
+                        <TextBox Text="TIME" Background="#99CCFF" Grid.Column="0" Grid.Row="7" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="5:19" Background="#99CCFF" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Foreground="Red" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="4" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="7" Grid.Row="7" Grid.ColumnSpan="3" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="20A047" Grid.Column="10" Grid.Row="7" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="12" Grid.Row="7" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="14" Grid.Row="7" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="16" Grid.Row="7" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="18" Grid.Row="7" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="20" Grid.Row="7" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="FILTER" Grid.Column="22" Grid.Row="7" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Text="240" Grid.Column="23" Grid.Row="7" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle1}"/>
+                        <TextBox Grid.Column="25" Grid.Row="7" Style="{StaticResource tbGridStyle1}"/>
                         <!--아홉번째줄-->
-                        <Border Background="#16365C" Grid.Column="0" Grid.Row="8" Grid.RowSpan="2" Margin="0 -0.5 0 -0.5" BorderBrush="White" BorderThickness="1">
-                            <TextBlock Text="Run No" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="1" Grid.Row="8" Grid.RowSpan="2" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="비고" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="2" Grid.Row="8" Grid.RowSpan="2"  BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="측정 출하" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="3" Grid.Row="8" Grid.RowSpan="2" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="제품" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="4" Grid.Row="8" Grid.RowSpan="2" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="MES No" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="5" Grid.Row="8" Grid.RowSpan="2" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="RUN No" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="6" Grid.Row="8" Grid.RowSpan="2" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="C" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="7" Grid.Row="8" Grid.RowSpan="2" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="F" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="8" Grid.Row="8" Grid.RowSpan="2" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="Carrier" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="9" Grid.Row="8" Grid.ColumnSpan="4" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="PSS 이력" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="13" Grid.Row="8" Grid.RowSpan="2" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="Loading" Foreground="Red" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="14" Grid.Row="8" Grid.ColumnSpan="3" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="작업시간" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="17" Grid.Row="8" Grid.ColumnSpan="3" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="최종온도" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="20" Grid.Row="8" Grid.RowSpan="2" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="TUNE" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="21" Grid.Row="8" Grid.RowSpan="2" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="Line용 비고" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="22" Grid.Row="8" Grid.RowSpan="2" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="TUNE 온도" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="23" Grid.Row="8" Grid.ColumnSpan="2" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="RPA" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="25" Grid.Row="8" Grid.RowSpan="2" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="TUNE 온도" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
+                        <TextBox Text="날짜" Foreground="White" Background="#16365C" Grid.Column="0" Grid.Row="8" Grid.RowSpan="2" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="비고" Foreground="White" Background="#16365C" Grid.Column="1" Grid.Row="8" Grid.RowSpan="2" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="측정 출하" Foreground="White" Background="#16365C" Grid.Column="2" Grid.Row="8" Grid.RowSpan="2" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="제품" Foreground="White" Background="#16365C" Grid.Column="3" Grid.Row="8" Grid.RowSpan="2" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="MES No" Foreground="White" Background="#16365C" Grid.Column="4" Grid.Row="8" Grid.RowSpan="2" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="RUN No" Foreground="White" Background="#16365C" Grid.Column="5" Grid.Row="8" Grid.RowSpan="2" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="C" Foreground="White" Background="#16365C" Grid.Column="6" Grid.Row="8" Grid.RowSpan="2" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="F" Foreground="White" Background="#16365C" Grid.Column="7" Grid.Row="8" Grid.RowSpan="2" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="Carrier" Foreground="White" Background="#16365C" Grid.Column="8" Grid.Row="8" Grid.RowSpan="2" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="PSS 이력" Foreground="White" Background="#16365C" Grid.Column="9" Grid.Row="8" Grid.ColumnSpan="4" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="Loading" Foreground="Red" Background="#16365C" Grid.Column="13" Grid.Row="8" Grid.RowSpan="2" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="작업시간" Foreground="White" Background="#16365C" Grid.Column="14" Grid.Row="8" Grid.ColumnSpan="3" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="최종온도" Foreground="White" Background="#16365C" Grid.Column="17" Grid.Row="8" Grid.ColumnSpan="3" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="TUNE" Foreground="White" Background="#16365C" Grid.Column="20" Grid.Row="8" Grid.RowSpan="2" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="Line용 비고" Foreground="White" Background="#16365C" Grid.Column="21" Grid.Row="8" Grid.RowSpan="2" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="TUNE 온도" Foreground="White" Background="#16365C" Grid.Column="22" Grid.Row="8" Grid.RowSpan="2" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="RPA" Foreground="White" Background="#16365C" Grid.Column="23" Grid.Row="8" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="TUNE 온도" Foreground="White" Background="#16365C" Grid.Column="25" Grid.Row="8" Grid.RowSpan="2" Style="{StaticResource tbGridStyle2}"/>
                         <!--열번째줄-->
-                        <Border Background="#16365C" Grid.Column="9" Grid.Row="9" Margin="0 -0.5 0 -0.5" BorderBrush="White" BorderThickness="1">
-                            <TextBlock Text="대분류" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="10" Grid.Row="9" Grid.ColumnSpan="2" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="소분류" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="12" Grid.Row="9" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="수량" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="14" Grid.Row="9" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="Start" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="15" Grid.Row="9" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="End" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="16" Grid.Row="9" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="Status" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="17" Grid.Row="9" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="Inner" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="18" Grid.Row="9" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="Middle" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="19" Grid.Row="9" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="Outer" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="23" Grid.Row="9" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="타겟파장" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
-                        <Border Background="#16365C" Grid.Column="24" Grid.Row="9" BorderBrush="White" BorderThickness="0.5">
-                            <TextBlock Text="수행시간" Foreground="White" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        </Border>
+                        <TextBox Text="대분류" Foreground="White" Background="#16365C" Grid.Column="9" Grid.Row="9" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="소분류" Foreground="White" Background="#16365C" Grid.Column="10" Grid.Row="9" Grid.ColumnSpan="2" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="수량" Foreground="White" Background="#16365C" Grid.Column="12" Grid.Row="9" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="Start" Foreground="White" Background="#16365C" Grid.Column="14" Grid.Row="9" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="End" Foreground="White" Background="#16365C" Grid.Column="15" Grid.Row="9" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="Status" Foreground="White" Background="#16365C" Grid.Column="16" Grid.Row="9" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="Inner" Foreground="White" Background="#16365C" Grid.Column="17" Grid.Row="9" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="Middle" Foreground="White" Background="#16365C" Grid.Column="18" Grid.Row="9" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="Outer" Background="#16365C" Grid.Column="19" Grid.Row="9" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="타겟파장" Foreground="White" Background="#16365C" Grid.Column="23" Grid.Row="9" Style="{StaticResource tbGridStyle2}"/>
+                        <TextBox Text="수행시간" Foreground="White" Background="#16365C" Grid.Column="24" Grid.Row="9" Style="{StaticResource tbGridStyle2}"/>
                     </Grid>
                 </Border>
             </line:CustomGrid>
+            <DataGrid Height="600" Margin="2" BorderBrush="Black" BorderThickness="1">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Test" Width="70" MaxWidth="70" MinWidth="70">
+                        
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Test" Width="70" MaxWidth="170" MinWidth="170"/>
+                    <DataGridTextColumn Header="Test" Width="70" MaxWidth="70" MinWidth="70"/>
+                    <DataGridTextColumn Header="Test" Width="70" MaxWidth="70" MinWidth="70"/>
+                    <DataGridTextColumn Header="Test" Width="70" MaxWidth="70" MinWidth="70"/>
+                    <DataGridTextColumn Header="Test" Width="70" MaxWidth="70" MinWidth="70"/>
+                    <DataGridTextColumn Header="Test" Width="30" MaxWidth="30" MinWidth="30"/>
+                    <DataGridTextColumn Header="Test" Width="30" MaxWidth="30" MinWidth="30"/>
+                    <DataGridTextColumn Header="Test" Width="50" MaxWidth="50" MinWidth="50"/>
+                    <DataGridTextColumn Header="Test" Width="50" MaxWidth="50" MinWidth="50"/>
+                    <DataGridTextColumn Header="Test" Width="130" MaxWidth="130" MinWidth="130"/>
+                    <DataGridTextColumn Header="Test" Width="65" MaxWidth="65" MinWidth="65"/>
+                    <DataGridTextColumn Header="Test" Width="65" MaxWidth="65" MinWidth="65"/>
+                    <DataGridTextColumn Header="Test" Width="40" MaxWidth="40" MinWidth="40"/>
+                    <DataGridTextColumn Header="Test" Width="40" MaxWidth="40" MinWidth="40"/>
+                    <DataGridTextColumn Header="Test" Width="40" MaxWidth="40" MinWidth="40"/>
+                    <DataGridTextColumn Header="Test" Width="40" MaxWidth="40" MinWidth="40"/>
+                    <DataGridTextColumn Header="Test" Width="40" MaxWidth="40" MinWidth="40"/>
+                    <DataGridTextColumn Header="Test" Width="40" MaxWidth="40" MinWidth="40"/>
+                    <DataGridTextColumn Header="Test" Width="40" MaxWidth="40" MinWidth="40"/>
+                    <DataGridTextColumn Header="Test" Width="60" MaxWidth="60" MinWidth="60"/>
+                    <DataGridTextColumn Header="Test" Width="60" MaxWidth="60" MinWidth="60"/>
+                    <DataGridTextColumn Header="Test" Width="60" MaxWidth="60" MinWidth="60"/>
+                    <DataGridTextColumn Header="Test" Width="60" MaxWidth="60" MinWidth="60"/>
+                    <DataGridTextColumn Header="Test" Width="80" MaxWidth="80" MinWidth="80"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
     </ScrollViewer>
 </UserControl>
